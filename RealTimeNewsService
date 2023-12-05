@@ -1,0 +1,30 @@
+package observerPattern;
+
+public class RealTimeNewsService {
+    public static void main(String[] args) {
+        NewsAgency newsAgency = new NewsAgency();
+        Subscriber subscriber1 = new SubscriberEndpoint("Okuys Enriquez");
+        Subscriber subscriber2 = new SubscriberEndpoint("Ogor Batumbakal");
+        Subscriber subscriber3 = new SubscriberEndpoint("Larp Gutom");
+
+        newsAgency.addSubscriber(subscriber1);
+        newsAgency.addSubscriber(subscriber2);
+
+        String firstHeadline ="\uD83D\uDC94 [Daniel Padilla and Kathryn Bernardo have confirmed their split!] \uD83D\uDC94 \n";
+        String firstNews = "Kathryn Bernardo has a new look a few days after announcing her breakup with Daniel Padilla. Meanwhile, Vice Ganda also had a reaction to the separation of friends. \n";
+        newsAgency.printNews(firstHeadline, firstNews);
+
+        newsAgency.addSubscriber(subscriber3);
+
+        String secondHeadline = "‼️ [Neighbors who quarreled, ended up in a shooting!!] ‼️ \n";
+        String secondNews = "The dispute between two neighbors that ended in a shooting in Tondo, Manila was caught on CCTV. The suspect's defense is self-defense. \n";
+        newsAgency.printNews(secondHeadline, secondNews);
+
+        newsAgency.removeSubscriber(subscriber1);
+
+        String thirdHeadline = "\uD83D\uDCA5 [Hinatu residents fear earthquake aftershocks] \uD83D\uDCA5 \n";
+        String thirdNews = "Residents rest along a road serving as temporary shelter as they experience frequent aftershocks at a village in Hinatuan town, Surigao del Sur province on Monday, days after an earthquake struck the province. The death toll from the 7.4 magnitude earthquake in the southern Philippines has risen to three, official tallies showed December 4, as frequent aftershocks send residents fleeing into the streets. \n";
+        newsAgency.printNews(thirdHeadline, thirdNews);
+
+    }
+}
